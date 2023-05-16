@@ -12,6 +12,7 @@ function calcular(tipo, valor) {
             case "-":
             case "*":
             case "/":
+            case ".":
                 document.getElementById("resultado").value += valor;
                 break;
             case "=":

@@ -1,7 +1,3 @@
-/* body {
-  background: #d9d9d9;
-} */
-
 .calculadora {
   margin-top: 40px;
   border: solid 1px #000;
@@ -41,10 +37,4 @@
 
 #zero-ponto {
   margin-top: -60px;
-}
-
-#copy-container {
-  margin-top: 150px;
-  text-align: center;
-  font-weight: bold;
 }
