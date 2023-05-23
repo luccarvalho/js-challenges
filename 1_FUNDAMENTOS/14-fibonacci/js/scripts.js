@@ -5,18 +5,22 @@ function fibonacci() {
 
     let resultado = document.getElementById("resultado");
 
-    let a = 0;
-    let b = 1;
-
-    let sequencia = []
-
     if (numero < 1 || numero === "") {
         resultado.className = "fw-bold text-danger";
         resultado.innerHTML = "Número inválido!";
         return;
     }
 
-    resultado.innerHTML = "";
+    resultado.innerHTML = `A sequência de Fibonacci até ${numero} é: ${sequenciaFibonacci(numero)}`;
+
+}
+
+function sequenciaFibonacci(numero) {
+
+    let a = 0;
+    let b = 1;
+
+    let sequencia = [];
 
     while (a <= numero) {
         sequencia.push(a);
@@ -25,6 +29,5 @@ function fibonacci() {
         b = temp + a
     }
 
-    resultado.innerHTML = `A sequência de Fibonacci até ${numero} é ${fibonacci()}`;
-
+    return sequencia;
 }
