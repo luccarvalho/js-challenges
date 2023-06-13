@@ -2,7 +2,9 @@
 
 function exibirFrequencia() {
 
-    const sequencia = parseInt(document.getElementById("sequencia").value);
+    const sequencia = document.getElementById("sequencia");
+
+    let arr = [];
 
     const resultado = document.getElementById("resultado");
 
@@ -13,5 +15,32 @@ function exibirFrequencia() {
         return;
     }
 
-    resultado.innerHTML = `O array gerado de números aleatórios é: ${gerarArrayAleatorio(tamanho, numero)}`;
+    arr.push(sequencia.value);
+
+    resultado.innerHTML = `O elemento mais frequente é: ${elementoMaisFrequente(arr)}`;
+}
+
+function elementoMaisFrequente(arr) {
+
+    const contador = {};
+
+    let elemento;
+
+    let maxContagem = 1;
+
+    for (const valor of arr) {
+
+        if (!contador[valor]) {
+            contador[valor] = 1;
+        } else {
+            contador[valor]++;
+        }
+
+        if (contador[valor] > maxContagem) {
+            maxContagem = contador[valor];
+            arr = valor;
+        }
+    }
+
+    return arr;
 }
